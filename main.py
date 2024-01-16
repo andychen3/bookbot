@@ -1,5 +1,11 @@
+import os
+
+
 def main():
-    path_to_file = "/Users/andychen/workspace/bookbot/books/frankenstein.txt"
+    current_directory = os.path.dirname(os.path.realpath(__file__))
+    relative_path_to_file = "books/frankenstein.txt"
+
+    path_to_file = os.path.join(current_directory, relative_path_to_file)
     file_contents = open_file(path_to_file)
     word_count = get_count(file_contents)
     sorted_list = get_letters(file_contents)
